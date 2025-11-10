@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Больше не платите за аренду своего офиса | ArendaVmeste</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .wide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 120px 30px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f7fafc 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            color: #1a202c;
+            line-height: 1.3;
+        }
+        
+        .hero .lead {
+            font-size: 1.5rem;
+            color: #4a5568;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            background: #2d3748;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        .btn:hover {
+            background: #1a202c;
+        }
+        
+        /* Story Section */
+        .story {
+            padding: 80px 30px;
+        }
+        
+        .story h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-align: center;
+            color: #1a202c;
+        }
+        
+        .story p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #4a5568;
+        }
+        
+        .story .highlight {
+            background: #fef3c7;
+            padding: 30px;
+            border-left: 4px solid #f59e0b;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+        
+        /* Stats Cards */
+        .stats-section {
+            padding: 80px 30px;
+            background: #2d3748;
+            color: white;
+        }
+        
+        .stats-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+        
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-card .big {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        .stat-card .description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Timeline */
+        .timeline {
+            padding: 80px 30px;
+        }
+        
+        .timeline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-marker {
+            text-align: center;
+        }
+        
+        .timeline-number {
+            width: 80px;
+            height: 80px;
+            background: #2d3748;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #1a202c;
+            font-weight: 400;
+        }
+        
+        .timeline-content p {
+            font-size: 1.15rem;
+            color: #4a5568;
+        }
+        
+        /* Comparison */
+        .comparison {
+            padding: 80px 30px;
+            background: #f7fafc;
+        }
+        
+        .comparison h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .comparison-side {
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .comparison-side.before {
+            background: #fff5f5;
+            border: 2px solid #fc8181;
+        }
+        
+        .comparison-side.after {
+            background: #f0fff4;
+            border: 2px solid #68d391;
+        }
+        
+        .comparison-side h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .comparison-side p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 30px;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .testimonial-item {
+            background: #f7fafc;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #4299e1;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-meta {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #1a202c;
+        }
+        
+        .testimonial-date {
+            color: #718096;
+        }
+        
+        /* Economics Deep Dive */
+        .economics {
+            padding: 80px 30px;
+            background: #2d3748;
+            color: white;
+        }
+        
+        .economics h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .economics-story {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .economics-box {
+            background: rgba(255,255,255,0.1);
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .economics-box .title {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .economics-box .calculation {
+            font-size: 1.3rem;
+            line-height: 2.2;
+            margin-bottom: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        .economics-box .result {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 30px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 30px;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff 0%, #f7fafc 100%);
+        }
+        
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            color: #1a202c;
+        }
+        
+        .cta p {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 50px;
+        }
+        
+        .cta-contact {
+            margin-top: 50px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 30px;
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        footer a {
+            color: #4299e1;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 60px 1fr;
+                gap: 20px;
+            }
+            
+            .timeline-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Больше не платите за аренду своего офиса</h1>
+            <p class="lead">История о том, как превратить простой кабинета в 18 500 ₽ чистой прибыли ежемесячно</p>
+            <a href="#contact" class="btn">Хочу так же</a>
+        </div>
+    </section>
+
+    <section class="story">
+        <div class="container">
+            <h2>Представьте</h2>
+            <p>Сейчас 3 часа ночи. Вы спите. А в это время кто-то бронирует ваш офис на завтра, оплачивает онлайн и получает автоматический код доступа.</p>
+            <p>Утром вы просыпаетесь — на счёте уже лежат деньги. Вы даже не прикасались к телефону.</p>
+            <p>Или вы в отпуске на море. Две недели. А офис продолжает приносить деньги каждый день. Клиенты бронируют, приходят, уходят. Всё работает само.</p>
+            
+            <div class="highlight">
+                "Я перестала тратить 25+ часов в месяц на приём платежей и выдачу кодов. Система делает это за меня, пока я сплю или отдыхаю."
+            </div>
+            
+            <p>Это не фантастика. Это реальность для владельцев офисов, которые подключили автоматизацию.</p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="wide-container">
+            <h2>Цифры не врут</h2>
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="big">18 500 ₽</div>
+                    <div class="description">Чистая прибыль в месяц при 40% загрузки</div>
+                </div>
+                <div class="stat-card">
+                    <div class="big">74%</div>
+                    <div class="description">Клиентов возвращаются во второй месяц</div>
+                </div>
+                <div class="stat-card">
+                    <div class="big">5,5 мес</div>
+                    <div class="description">Средний срок работы с одним клиентом</div>
+                </div>
+                <div class="stat-card">
+                    <div class="big">0 часов</div>
+                    <div class="description">Вы тратите на обслуживание постоянных клиентов</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="container">
+            <h2>Как это работает</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <div class="timeline-number">1</div>
+                </div>
+                <div class="timeline-content">
+                    <h3>Умный замок</h3>
+                    <p>Мы устанавливаем систему контроля доступа. Никаких ключей, никаких встреч. Код генерируется автоматически для каждого клиента.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <div class="timeline-number">2</div>
+                </div>
+                <div class="timeline-content">
+                    <h3>Одобрение новых клиентов</h3>
+                    <p>Клиент находит вас на Авито. Вы знакомитесь один раз — лично или по видеосвязи. Проговариваете правила. Одобряете. Это единственная ручная операция.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <div class="timeline-number">3</div>
+                </div>
+                <div class="timeline-content">
+                    <h3>Автоматика включается</h3>
+                    <p>Дальше клиент сам бронирует свободные слоты, оплачивает онлайн, получает код. Приходит когда удобно. Уходит. Система всё контролирует.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <div class="timeline-number">4</div>
+                </div>
+                <div class="timeline-content">
+                    <h3>Клиенты возвращаются</h3>
+                    <p>74% арендаторов возвращаются уже во второй месяц. Им удобно. Они бронируют снова и снова. В среднем — 5,5 месяцев сотрудничества.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <div class="wide-container">
+            <h2>До и после</h2>
+            <div class="comparison-grid">
+                <div class="comparison-side before">
+                    <h3>Было</h3>
+                    <p><strong>Аренда:</strong> 15 000 ₽ в месяц</p>
+                    <p><strong>Время на управление:</strong> 25+ часов на 100 бронирований — приём платежей, коды, переносы</p>
+                    <p><strong>Новые клиенты:</strong> 4 в месяц, по 30 минут знакомства = 2 часа</p>
+                    <p><strong>Возврат:</strong> меньше 30% из-за неудобства</p>
+                    <p><strong>Итог:</strong> Нет времени на работу. Часть запросов приходится отклонять. Офис простаивает.</p>
+                </div>
+                
+                <div class="comparison-side after">
+                    <h3>Стало</h3>
+                    <p><strong>Доход:</strong> 35 000 ₽ в месяц при 40% загрузки</p>
+                    <p><strong>Расходы:</strong> Аренда 15 000 ₽ + подписка 1 500 ₽</p>
+                    <p><strong>Чистая прибыль:</strong> 18 500 ₽</p>
+                    <p><strong>Время на управление:</strong> Одобрение нового клиента — один раз. Дальше всё автоматически.</p>
+                    <p><strong>Возврат:</strong> 74% во второй месяц, 50%+ остаются 6 месяцев</p>
+                    <p><strong>Итог:</strong> Офис окупает себя. Вы занимаетесь своей работой. Деньги приходят даже ночью.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Что говорят те, кто арендует</h2>
+            <p style="text-align: center; color: #718096; margin-bottom: 50px;">Реальные отзывы с Авито от психологов и специалистов</p>
+            
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    "Все автоматизировано, хороший ремонт, удобное бронирование. Не знаю как часто, но буду бывать точно. Уже забронировал ещё несколько окошек."
+                </div>
+                <div class="testimonial-meta">
+                    <span class="testimonial-author">Виктор, мастер-проводник</span> • 
+                    <span class="testimonial-date">20 октября 2024</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    "Очень удобно бронировать — всё просто и понятно. Ольга знакомится лично с каждым арендатором — сразу чувствуется уют и забота."
+                </div>
+                <div class="testimonial-meta">
+                    <span class="testimonial-author">Екатерина</span> • 
+                    <span class="testimonial-date">24 октября 2024</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    "Удобно, что не надо заранее встречаться, чтобы отдали ключ — всё автоматизировано. Нашла и зашла без проблем. Планирую обратиться вновь."
+                </div>
+                <div class="testimonial-meta">
+                    <span class="testimonial-author">Екатерина</span> • 
+                    <span class="testimonial-date">16 июня 2024</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    "Пространство уютное, чистое, клиентам понравилось. Удобно устроен процесс бронирования и доступа. Очень рекомендую!"
+                </div>
+                <div class="testimonial-meta">
+                    <span class="testimonial-author">Анастасия Соколова</span> • 
+                    <span class="testimonial-date">21 октября 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="economics">
+        <div class="container">
+            <h2>Давайте посчитаем</h2>
+            <div class="economics-story">
+                Один кабинет для индивидуальных консультаций в Самаре.<br>
+                Загрузка 40% дневного времени.<br>
+                Средний клиент тратит 6 300 ₽ в месяц и остаётся 5,5 месяцев.
+            </div>
+            
+            <div class="economics-box">
+                <div class="title">Экономика одного кабинета</div>
+                <div class="calculation">
+                    Доход при 40% загрузки: <strong>35 000 ₽</strong><br>
+                    Аренда помещения: <strong>15 000 ₽</strong><br>
+                    Подписка на платформу: <strong>1 500 ₽</strong><br>
+                    Расходы всего: <strong>16 500 ₽</strong>
+                </div>
+                <div class="result">18 500 ₽</div>
+                <div style="font-size: 1.3rem; opacity: 0.9;">чистыми каждый месяц</div>
+            </div>
+            
+            <div style="margin-top: 60px; text-align: center; font-size: 1.2rem; line-height: 2;">
+                <strong>Дополнительно:</strong><br>
+                74% клиентов возвращаются во второй месяц<br>
+                50%+ остаются 6 месяцев и дольше<br>
+                Средний клиент приносит 35 000 ₽ за весь цикл
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Хотите так же?</h2>
+            <p>Подключим за 5 дней. Установим оборудование, настроим систему, запустим.</p>
+            <a href="mailto:hello@arendavmeste.ru" class="btn">Оставить заявку</a>
+            
+            <div class="cta-contact">
+                <p>Или свяжитесь с нами напрямую:</p>
+                <p>
+                    📧 hello@arendavmeste.ru<br>
+                    💬 Telegram: @arendavmeste<br>
+                    📞 +7 (XXX) XXX-XX-XX
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ArendaVmeste.ru — Автоматизация сдачи офисов</p>
+            <p style="margin-top: 20px;">
+                <a href="#blog">Блог</a>
+                <a href="#privacy">Конфиденциальность</a>
+                <a href="#terms">Условия</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+

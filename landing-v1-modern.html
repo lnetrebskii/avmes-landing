@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сдавайте офис, пока не используете его | ArendaVmeste</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            text-align: center;
+        }
+        
+        .badge-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .problem h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1f2937;
+        }
+        
+        .problem-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .problem-card h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 20px;
+        }
+        
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+        
+        /* Benefits */
+        .benefits {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .benefits h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Comparison */
+        .comparison {
+            padding: 80px 20px;
+        }
+        
+        .comparison h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .comparison-card {
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .comparison-card.manual {
+            background: #fee2e2;
+            border: 2px solid #dc2626;
+        }
+        
+        .comparison-card.auto {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+        }
+        
+        .comparison-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .comparison-card li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .comparison-card.manual li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: bold;
+        }
+        
+        .comparison-card.auto li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        /* Economics */
+        .economics {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .economics h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        
+        .economics-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .economics-card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .economics-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .economics-card .label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+        
+        .testimonial-card .author {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .testimonial-card .date {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 20px;
+        }
+        
+        .faq h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 25px;
+        }
+        
+        .faq-item h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Сдавайте свой офис, пока не используете его</h1>
+            <p>Автоматическая система бронирования и оплаты — вы решаете кому и когда сдавать</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Подключить офис</a>
+                <a href="#economics" class="btn btn-secondary">Рассчитать выгоду</a>
+            </div>
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-icon">🤖</div>
+                    <div>Автоматизация</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">🔒</div>
+                    <div>Контроль доступа</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">💳</div>
+                    <div>Прозрачная оплата</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Простой офиса съедает аренду</h2>
+            <div class="problem-content">
+                <div class="problem-card">
+                    <h3>⏰ До 40% времени кабинет пустует</h3>
+                    <p>Вы платите полную аренду, но используете офис только частично. Свободные часы — это упущенный доход.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔄 25+ часов на обслуживание</h3>
+                    <p>При ручном управлении 100 бронирований отнимают 25+ часов ежемесячно на приём платежей, выдачу кодов и переносы.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>😓 Нет времени на работу</h3>
+                    <p>Постоянное переключение внимания, встречи с новыми клиентами, низкий возврат арендаторов — вы вынуждены отказываться от запросов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Как это работает</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Устанавливаем умный замок</h3>
+                    <p>Современная система контроля доступа с автоматической выдачей кодов</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Настраиваем расписание</h3>
+                    <p>Вы указываете, когда готовы сдавать офис. Одобряете новых арендаторов вручную</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Система работает сама</h3>
+                    <p>Автоматические бронирования, оплаты и доступ — даже ночью, когда вы спите или в отпуске</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Ключевые преимущества</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>Контроль доступа</h3>
+                    <p>Вы одобряете каждого нового арендатора вручную. Умный замок, журнал посещений, полный контроль</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Оплата без просрочек</h3>
+                    <p>Автоматический биллинг 24/7. Бронирования и платежи проходят даже ночью или когда вы в отпуске</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Личный кабинет</h3>
+                    <p>Настройка расписания, аналитика загрузки, отчёты по доходам, интеграция с календарём</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Высокий ретеншн</h3>
+                    <p>74% арендаторов возвращаются уже во второй месяц. Постоянные клиенты бережно относятся к офису</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛟</div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Помощь при нестандартных ситуациях в любое время</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Минимальные затраты</h3>
+                    <p>Постоянные клиенты поддерживают чистоту, себестоимость обслуживания стремится к нулю</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <h2>Ручное управление vs. Автоматизация</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card manual">
+                    <h3>Ручное управление</h3>
+                    <ul>
+                        <li>Аренда 15 000 ₽ в месяц</li>
+                        <li>25+ часов на обслуживание 100 бронирований ежемесячно</li>
+                        <li>По 15 минут на каждое бронирование: оплата, коды, переносы</li>
+                        <li>4 новых клиента — 2 часа на знакомства</li>
+                        <li>Возвращаются менее 30% из-за неудобства</li>
+                        <li>Приходится отказывать запросам</li>
+                    </ul>
+                </div>
+                <div class="comparison-card auto">
+                    <h3>Автоматизация</h3>
+                    <ul>
+                        <li>Система принимает платежи и выдаёт доступы</li>
+                        <li>Одобрение нового клиента — один раз</li>
+                        <li>40% загрузки → 35 000 ₽ дохода</li>
+                        <li>Аренда 15 000 ₽ + подписка 1 500 ₽ окупаются</li>
+                        <li>Чистыми остаётся 18 500 ₽ в месяц</li>
+                        <li>74% возвращаются во второй месяц</li>
+                        <li>Стабильный доход без лишних часов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economics -->
+    <section class="economics" id="economics">
+        <div class="container">
+            <h2>Экономика в цифрах</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">Реальные данные с действующего офиса в Самаре</p>
+            <div class="economics-cards">
+                <div class="economics-card">
+                    <div class="number">6 300 ₽</div>
+                    <div class="label">Средний чек клиента в месяц</div>
+                </div>
+                <div class="economics-card">
+                    <div class="number">5,5 мес</div>
+                    <div class="label">Средний срок сотрудничества</div>
+                </div>
+                <div class="economics-card">
+                    <div class="number">35 000 ₽</div>
+                    <div class="label">Доход за весь цикл клиента</div>
+                </div>
+                <div class="economics-card">
+                    <div class="number">74%</div>
+                    <div class="label">Возвращаются во второй месяц</div>
+                </div>
+                <div class="economics-card">
+                    <div class="number">50%+</div>
+                    <div class="label">Остаются 6 месяцев и дольше</div>
+                </div>
+                <div class="economics-card">
+                    <div class="number">18 500 ₽</div>
+                    <div class="label">Чистая прибыль при 40% загрузки</div>
+                </div>
+            </div>
+            <div style="margin-top: 60px; padding: 40px; background: rgba(255,255,255,0.15); border-radius: 12px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Пример: кабинет для консультаций</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    40% загрузки дневного времени → <strong>35 000 ₽ дохода</strong><br>
+                    Аренда 15 000 ₽ + подписка 1 500 ₽ = 16 500 ₽<br>
+                    <strong style="font-size: 1.5rem;">Чистыми: 18 500 ₽ в месяц</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Отзывы арендаторов</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: #6b7280;">Реальные отзывы с Авито от психологов и специалистов</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Очень удобно бронировать — всё просто и понятно. Ольга знакомится лично с каждым арендатором — сразу чувствуется уют и забота."
+                    </div>
+                    <div class="author">Екатерина</div>
+                    <div class="date">24 октября 2024</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Пространство уютное, чистое, клиентам понравилось. Удобно устроен процесс бронирования и доступа. Очень рекомендую!"
+                    </div>
+                    <div class="author">Анастасия Соколова</div>
+                    <div class="date">21 октября 2024</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Все автоматизировано, хороший ремонт, удобное бронирование. Не знаю как часто, но буду бывать точно. Уже забронировал ещё несколько окошек."
+                    </div>
+                    <div class="author">Виктор, мастер-проводник</div>
+                    <div class="date">20 октября 2024</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Современная система доступа по индивидуальным кодам, удобное бронирование. Никаких сложностей. Особенно ценно, что арендодатель узнаёт всех лично."
+                    </div>
+                    <div class="author">Альбина</div>
+                    <div class="date">27 сентября 2024</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Удобно, что не надо заранее встречаться, чтобы отдали ключ — всё автоматизировано. Нашла и зашла без проблем."
+                    </div>
+                    <div class="author">Екатерина</div>
+                    <div class="date">16 июня 2024</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Электронный замок, не требующий присутствия других лиц. Пространство создано с любовью — уютные кресла, просторная кухня, чистые туалеты."
+                    </div>
+                    <div class="author">Наталья</div>
+                    <div class="date">30 мая 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Частые вопросы</h2>
+            <div class="faq-item">
+                <h3>Как часто можно сдавать офис?</h3>
+                <p>Вы сами определяете расписание — хоть каждый день, хоть пару раз в неделю. Система автоматически принимает бронирования в указанные вами часы.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Что если мне срочно нужен офис?</h3>
+                <p>Вы можете заблокировать любое время в личном кабинете. Система не будет принимать бронирования на эти часы.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Как я контролирую, кто приходит?</h3>
+                <p>Каждого нового арендатора вы одобряете вручную перед первым визитом. Можете познакомиться лично или провести короткий созвон.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Что с уборкой и обслуживанием?</h3>
+                <p>Постоянные клиенты заинтересованы поддерживать чистоту. Вы также можете установить правила и залоговую систему через платформу.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Какое оборудование нужно?</h3>
+                <p>Умный замок с автоматическим контролем доступа. Мы помогаем с установкой и настройкой.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Сколько стоит подключение?</h3>
+                <p>Подписка на платформу — 1 500 ₽ в месяц при оплате за год. Установка умного замка — от 15 000 ₽.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>Подключите офис и начните окупать аренду</h2>
+            <p>Заполните заявку — подключение за 5 дней</p>
+            <div class="cta-buttons">
+                <a href="mailto:hello@arendavmeste.ru" class="btn btn-primary">Заполнить заявку</a>
+                <a href="https://t.me/arendavmeste" class="btn btn-secondary">Написать в Telegram</a>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.1rem;">
+                📞 +7 (XXX) XXX-XX-XX<br>
+                📧 hello@arendavmeste.ru
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ArendaVmeste.ru — Автоматизация сдачи офисов</p>
+            <p style="margin-top: 20px;">
+                <a href="#blog">Блог</a> | 
+                <a href="#privacy">Политика конфиденциальности</a> | 
+                <a href="#terms">Условия использования</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+

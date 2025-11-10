@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Окупайте аренду офиса автоматически | ArendaVmeste</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 100px 30px;
+            text-align: center;
+            background: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .btn-dark {
+            background: #1a1a1a;
+            color: white;
+            border: 2px solid #1a1a1a;
+        }
+        
+        .btn-dark:hover {
+            background: white;
+            color: #1a1a1a;
+        }
+        
+        .btn-light {
+            background: white;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+            margin-left: 15px;
+        }
+        
+        .btn-light:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        /* Stats */
+        .stats {
+            padding: 80px 30px;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item .label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        /* Content Sections */
+        section {
+            padding: 100px 30px;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-white {
+            background: white;
+        }
+        
+        .section-gray {
+            background: #fafafa;
+        }
+        
+        /* Two Column */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .two-column h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .two-column p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+        }
+        
+        .two-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .two-column ul li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.1rem;
+        }
+        
+        .two-column ul li:before {
+            content: "→ ";
+            font-weight: 700;
+        }
+        
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .feature-item p {
+            color: #4a4a4a;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        /* Economics Box */
+        .economics-box {
+            background: #f0f0f0;
+            padding: 60px;
+            border-radius: 8px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .economics-box h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .economics-box .big-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .economics-box .formula {
+            font-size: 1.3rem;
+            color: #4a4a4a;
+            line-height: 2;
+        }
+        
+        /* Testimonials */
+        .testimonials-list {
+            margin-top: 50px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1a1a1a;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .testimonial-date {
+            color: #999;
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 30px;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: white;
+            padding: 50px 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        footer a {
+            color: #1a1a1a;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            section h2 {
+                font-size: 2rem;
+            }
+            
+            .btn-light {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ArendaVmeste</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Ваш офис окупает сам себя</h1>
+            <p class="subtitle">Автоматизация сдачи офиса в свободное время — без рутины, с полным контролем</p>
+            <div>
+                <a href="#contact" class="btn btn-dark">Подключить офис</a>
+                <a href="#economics" class="btn btn-light">Посмотреть цифры</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="number">18 500 ₽</div>
+                    <div class="label">Чистая прибыль при 40% загрузки</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">74%</div>
+                    <div class="label">Клиентов возвращаются во второй месяц</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">5,5 мес</div>
+                    <div class="label">Средний срок сотрудничества</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">24/7</div>
+                    <div class="label">Бронирования даже когда вы спите</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="container">
+            <h2>Проблема проста</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Вы платите за простой</h3>
+                    <p>До 40% рабочего времени кабинет пустует. Аренда 15 000 ₽ в месяц — а офис используется наполовину. Это упущенные 20 000 ₽+ ежемесячно.</p>
+                </div>
+                <div>
+                    <h3>Ручное управление съедает время</h3>
+                    <p>100 бронирований = 25+ часов на приём платежей, коды доступа, переносы. 4 новых клиента = 2 часа знакомств. Времени на основную работу не остаётся.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
+            <h2>Решение</h2>
+            <div class="two-column">
+                <div>
+                    <ul>
+                        <li>Умный замок с автоматическим доступом</li>
+                        <li>Клиенты бронируют и оплачивают сами</li>
+                        <li>Вы одобряете новых арендаторов один раз</li>
+                        <li>Система работает 24/7, даже в отпуске</li>
+                        <li>Полный контроль и безопасность</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Как это работает</h3>
+                    <p>Устанавливаем умный замок, настраиваем ваше расписание. Клиенты находят офис на Авито, вы одобряете новых вручную — знакомитесь, проговариваете правила. Дальше всё автоматически: бронирование, оплата, доступ. Вы просто получаете деньги.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white" id="economics">
+        <div class="container">
+            <h2>Экономика</h2>
+            <div class="economics-box">
+                <h3>Кабинет для консультаций, Самара</h3>
+                <div class="formula">
+                    40% загрузки дневного времени<br>
+                    = <span style="font-weight: 700;">35 000 ₽ дохода в месяц</span><br><br>
+                    Аренда 15 000 ₽ + подписка 1 500 ₽
+                </div>
+                <div class="big-number">18 500 ₽</div>
+                <div class="formula">чистыми каждый месяц</div>
+            </div>
+            
+            <div class="feature-grid" style="margin-top: 80px;">
+                <div class="feature-item">
+                    <h3>6 300 ₽ / месяц</h3>
+                    <p>Средний клиент тратит около 6 300 ₽ ежемесячно на аренду кабинета</p>
+                </div>
+                <div class="feature-item">
+                    <h3>35 000 ₽ за цикл</h3>
+                    <p>Один арендатор остаётся в среднем 5,5 месяцев и приносит 35 000 ₽ за всё время</p>
+                </div>
+                <div class="feature-item">
+                    <h3>50%+ остаются надолго</h3>
+                    <p>Более половины арендаторов пользуются офисом 6 месяцев и дольше</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
+            <h2>Что говорят арендаторы</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 50px;">Реальные отзывы с Авито</p>
+            <div class="testimonials-list">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Все автоматизировано, хороший ремонт, удобное бронирование. Не знаю как часто, но буду бывать точно. Уже забронировал ещё несколько окошек."
+                    </div>
+                    <div class="testimonial-author">Виктор, мастер-проводник</div>
+                    <div class="testimonial-date">20 октября 2024</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Очень удобно бронировать — всё просто и понятно. Ольга знакомится лично с каждым арендатором — сразу чувствуется уют и забота."
+                    </div>
+                    <div class="testimonial-author">Екатерина</div>
+                    <div class="testimonial-date">24 октября 2024</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Удобно, что не надо заранее встречаться, чтобы отдали ключ — всё автоматизировано. Нашла и зашла без проблем. Планирую обратиться вновь."
+                    </div>
+                    <div class="testimonial-author">Екатерина</div>
+                    <div class="testimonial-date">16 июня 2024</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Современная система доступа по индивидуальным кодам, удобное бронирование. Никаких сложностей. Особенно ценно, что арендодатель узнаёт всех лично."
+                    </div>
+                    <div class="testimonial-author">Альбина</div>
+                    <div class="testimonial-date">27 сентября 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="container">
+            <h2>Преимущества автоматизации</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Полный контроль</h3>
+                    <p>Вы одобряете каждого нового арендатора вручную. Знакомитесь лично или по видеосвязи. Умный замок и журнал посещений.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Никаких просрочек</h3>
+                    <p>Автоматический биллинг. Бронирования и платежи проходят круглосуточно — даже ночью или в отпуске.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Высокий возврат</h3>
+                    <p>74% арендаторов возвращаются во второй месяц. Постоянные клиенты бережно относятся к офису.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Личный кабинет</h3>
+                    <p>Настройка расписания, аналитика загрузки, отчёты по доходам, интеграция с Google Calendar.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Поддержка 24/7</h3>
+                    <p>Помощь при нестандартных ситуациях в любое время суток.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Минимальные затраты</h3>
+                    <p>Постоянные клиенты поддерживают чистоту. Себестоимость обслуживания стремится к нулю.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Подключите офис за 5 дней</h2>
+            <p>Заполните заявку или напишите нам напрямую</p>
+            <div>
+                <a href="mailto:hello@arendavmeste.ru" class="btn btn-dark" style="background: white; color: #1a1a1a;">Заполнить заявку</a>
+            </div>
+            <p style="margin-top: 50px; font-size: 1.1rem;">
+                📧 hello@arendavmeste.ru<br>
+                💬 Telegram: @arendavmeste<br>
+                📞 +7 (XXX) XXX-XX-XX
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 20px;">&copy; 2024 ArendaVmeste.ru</p>
+            <div>
+                <a href="#blog">Блог</a>
+                <a href="#privacy">Конфиденциальность</a>
+                <a href="#terms">Условия</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
