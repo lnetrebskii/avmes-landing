@@ -29,7 +29,7 @@ twitter_username: arendavmeste
 github_username:  arendavmeste
 
 header_pages:
-  - about.markdown
+  - about.md
 
 # Build settings
 theme: minima

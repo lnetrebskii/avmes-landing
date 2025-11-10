@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page_base
 title: О сервисе ArendaVmeste
 permalink: /about/
 ---
