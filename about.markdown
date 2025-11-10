@@ -1,18 +1,32 @@
 ---
 layout: page
-title: About
+title: О сервисе ArendaVmeste
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+ArendaVmeste — сервис, который помогает владельцам офисов и кабинетов зарабатывать на пространстве без рутины. Мы подключаем умные замки, настраиваем автоматические бронирования и оплату, а вы сохраняете полный контроль над тем, кто приходит и как используется помещение.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+## Что мы делаем
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+- Подбираем или подключаем ваш кабинет к автоматизации за 5 дней.
+- Настраиваем расписание, биллинг и уведомления для клиентов.
+- Помогаем контролировать доступ и безопасность без личной передачи ключей.
+- Делаем понятные отчёты по загрузке и доходам.
 
+## Для кого сервис
 
-[jekyll-organization]: https://github.com/jekyll
+- Владельцы кабинетов для консультаций и терапии.
+- Офисы с неполной загрузкой, которые простаивают вечерами или по выходным.
+- Пространства для мастер-классов и образовательных форматов.
+
+## Почему это работает
+
+74% арендаторов возвращаются во второй месяц, а средний клиент остаётся на 5,5 месяцев. При загрузке 40% кабинет в Самаре приносит 18 500 ₽ чистой прибыли — система окупает аренду и подписку и позволяет зарабатывать сверху.
+
+## Связаться с нами
+
+- Email: [hello@arendavmeste.ru](mailto:hello@arendavmeste.ru)
+- Telegram: [@arendavmeste](https://t.me/arendavmeste)
+- Телефон: +7 (XXX) XXX-XX-XX
+
+Хотите, чтобы офис работал как сервис? Напишите нам — соберём автоматизацию под ваш сценарий.

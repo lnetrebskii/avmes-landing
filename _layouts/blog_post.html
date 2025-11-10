@@ -1,0 +1,17 @@
+---
+layout: blog_base
+---
+
+<section class="post-wrap">
+    <div class="container narrow">
+        <a class="breadcrumb" href="{{ '/blog/' | relative_url }}">← Ко всем статьям</a>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-meta">
+            {{ page.date | date: '%-d %B %Y' | replace: 'January', 'января' | replace: 'February', 'февраля' | replace: 'March', 'марта' | replace: 'April', 'апреля' | replace: 'May', 'мая' | replace: 'June', 'июня' | replace: 'July', 'июля' | replace: 'August', 'августа' | replace: 'September', 'сентября' | replace: 'October', 'октября' | replace: 'November', 'ноября' | replace: 'December', 'декабря' }}
+            {% if page.reading_time %} · {{ page.reading_time }}{% endif %}
+        </p>
+        <div class="post-content">
+            {{ content }}
+        </div>
+    </div>
+</section>

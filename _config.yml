@@ -28,6 +28,9 @@ url: "https://arendavmeste.ru" # the base hostname & protocol for your site
 twitter_username: arendavmeste
 github_username:  arendavmeste
 
+header_pages:
+  - about.markdown
+
 # Build settings
 theme: minima
 plugins:
