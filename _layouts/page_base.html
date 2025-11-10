@@ -30,48 +30,42 @@
             text-decoration: none;
         }
 
-        header {
+        .site-header {
             background: white;
             border-bottom: 1px solid #ededed;
         }
 
-        .container {
+        .site-header__container {
             width: 100%;
             max-width: 960px;
             margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .site-header {
-            padding: 28px 0 16px;
-        }
-
-        .brand-row {
+            padding: 24px 24px 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 24px;
         }
 
-        .logo {
+        .site-header__brand a {
             font-size: 1.6rem;
             font-weight: 700;
         }
 
-        nav.nav-links {
+        .site-header__nav {
             display: flex;
-            gap: 20px;
+            gap: 22px;
             flex-wrap: wrap;
             font-size: 0.98rem;
             color: #52525b;
+            font-weight: 500;
         }
 
-        nav.nav-links a {
+        .site-header__nav a {
             padding: 6px 0;
             position: relative;
         }
 
-        nav.nav-links a::after {
+        .site-header__nav a::after {
             content: "";
             position: absolute;
             left: 0;
@@ -83,8 +77,8 @@
             transition: opacity 0.2s ease;
         }
 
-        nav.nav-links a:hover::after,
-        nav.nav-links a:focus-visible::after {
+        .site-header__nav a:hover::after,
+        .site-header__nav a:focus-visible::after {
             opacity: 1;
         }
 
@@ -144,13 +138,13 @@
         }
 
         @media (max-width: 720px) {
-            .brand-row {
+            .site-header__container {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 12px;
+                gap: 14px;
             }
 
-            nav.nav-links {
+            .site-header__nav {
                 gap: 16px;
             }
 
@@ -161,18 +155,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container site-header">
-            <div class="brand-row">
-                <div class="logo"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></div>
-                <nav class="nav-links" aria-label="Основная навигация">
-                    <a href="{{ '/about/' | relative_url }}">О сервисе</a>
-                    <a href="{{ '/blog/' | relative_url }}">Блог</a>
-                    <a href="{{ '/' | relative_url }}">Главная</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+    {% include site-header.html %}
 
     <main>
         <section class="page-wrap">

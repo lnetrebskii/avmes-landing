@@ -29,42 +29,46 @@ title: Окупайте аренду офиса автоматически | Are
         }
         
         /* Header */
-        header {
+        .site-header {
             background: white;
-            padding: 24px 0 16px;
             border-bottom: 1px solid #e0e0e0;
         }
         
-        .header-inner {
+        .site-header__container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px 24px 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 24px;
         }
         
-        .logo {
+        .site-header__brand a {
             font-size: 1.6rem;
             font-weight: 700;
-            color: #1a1a1a;
+            color: inherit;
+            text-decoration: none;
         }
         
-        .nav-links {
+        .site-header__nav {
             display: flex;
             gap: 22px;
             flex-wrap: wrap;
             font-size: 0.98rem;
             color: #52525b;
+            font-weight: 500;
         }
         
-        .nav-links a {
+        .site-header__nav a {
             color: inherit;
             text-decoration: none;
             padding: 6px 0;
             position: relative;
-            font-weight: 500;
         }
         
-        .nav-links a::after {
+        .site-header__nav a::after {
             content: "";
             position: absolute;
             left: 0;
@@ -76,8 +80,8 @@ title: Окупайте аренду офиса автоматически | Are
             transition: opacity 0.2s ease;
         }
         
-        .nav-links a:hover::after,
-        .nav-links a:focus-visible::after {
+        .site-header__nav a:hover::after,
+        .site-header__nav a:focus-visible::after {
             opacity: 1;
         }
         
@@ -393,7 +397,7 @@ title: Окупайте аренду офиса автоматически | Are
                 font-size: 2.5rem;
             }
             
-            .header-inner {
+            .site-header__container {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 14px;
@@ -420,18 +424,7 @@ title: Окупайте аренду офиса автоматически | Are
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-inner">
-                <div class="logo"><a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">ArendaVmeste</a></div>
-                <nav class="nav-links" aria-label="Основная навигация">
-                    <a href="{{ '/about/' | relative_url }}">О сервисе</a>
-                    <a href="{{ '/blog/' | relative_url }}">Блог</a>
-                    <a href="#contact">Контакты</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+    {% include site-header.html %}
 
     <section class="hero">
         <div class="container">
