@@ -31,14 +31,54 @@ title: Окупайте аренду офиса автоматически | Are
         /* Header */
         header {
             background: white;
-            padding: 20px 0;
+            padding: 24px 0 16px;
             border-bottom: 1px solid #e0e0e0;
         }
         
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+        
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #1a1a1a;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            font-size: 0.98rem;
+            color: #52525b;
+        }
+        
+        .nav-links a {
+            color: inherit;
+            text-decoration: none;
+            padding: 6px 0;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 2px;
+            background: #1a1a1a;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            opacity: 1;
         }
         
         /* Hero */
@@ -353,6 +393,12 @@ title: Окупайте аренду офиса автоматически | Are
                 font-size: 2.5rem;
             }
             
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+
             .two-column {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -376,7 +422,14 @@ title: Окупайте аренду офиса автоматически | Are
 <body>
     <header>
         <div class="container">
-            <div class="logo">ArendaVmeste</div>
+            <div class="header-inner">
+                <div class="logo"><a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">ArendaVmeste</a></div>
+                <nav class="nav-links" aria-label="Основная навигация">
+                    <a href="{{ '/about/' | relative_url }}">О сервисе</a>
+                    <a href="{{ '/blog/' | relative_url }}">Блог</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+            </div>
         </div>
     </header>
 
