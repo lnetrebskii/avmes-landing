@@ -6,10 +6,11 @@
     <nav class="site-header__nav" aria-label="Основная навигация">
       <a href="{{ '/about/' | relative_url }}">О сервисе</a>
       <a href="{{ '/blog/' | relative_url }}">Блог</a>
-      {% if page.url == '/' %}
-        <a href="{{ '/' | relative_url }}">Главная</a>
+      {% assign current_url = page.url | default: '' %}
+      {% if current_url == '/' or current_url == '/index.html' or page.layout == 'none' %}
+        <a href="#contact">Контакты</a>
       {% else %}
-        <a href="{{ '/' | relative_url }}#contact">Контакты</a>
+        <a href="{{ '/' | relative_url }}">Главная</a>
       {% endif %}
     </nav>
   </div>

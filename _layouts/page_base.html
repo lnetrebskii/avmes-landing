@@ -30,20 +30,17 @@
             text-decoration: none;
         }
 
+        .container,
+        .site-header__container {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
         .site-header {
             background: white;
             border-bottom: 1px solid #ededed;
-        }
-
-        .site-header__container {
-            width: 100%;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 24px;
         }
 
         .site-header__brand a {
@@ -53,15 +50,15 @@
 
         .site-header__nav {
             display: flex;
-            gap: 22px;
+            gap: 18px;
             flex-wrap: wrap;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             color: #52525b;
             font-weight: 500;
         }
 
         .site-header__nav a {
-            padding: 6px 0;
+            padding: 4px 0;
             position: relative;
         }
 
@@ -87,22 +84,22 @@
         }
 
         .page-wrap {
-            padding: 80px 0;
+            padding: 60px 0 80px;
         }
 
         .page-title {
-            font-size: clamp(2.4rem, 5vw, 3.2rem);
+            font-size: clamp(2.2rem, 4.5vw, 3rem);
             font-weight: 800;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             line-height: 1.2;
         }
 
         .page-content {
             background: white;
             border-radius: 14px;
-            padding: 40px;
-            box-shadow: 0 24px 48px rgba(17, 24, 39, 0.08);
-            font-size: 1.08rem;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(17, 24, 39, 0.08);
+            font-size: 1.05rem;
             color: #1f2933;
         }
 
@@ -141,15 +138,15 @@
             .site-header__container {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 14px;
+                gap: 12px;
             }
 
             .site-header__nav {
-                gap: 16px;
+                gap: 14px;
             }
 
             .page-content {
-                padding: 28px;
+                padding: 26px;
             }
         }
     </style>
